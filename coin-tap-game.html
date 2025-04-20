@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Kazan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        .game-container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .coin {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Coin Kazan!</h1>
+        <div class="coin">Coin: 0</div>
+        <button onclick="coinKazan()">Tıkla ve Coin Kazan</button>
+    </div>
+
+    <script>
+        let coinCount = 0;
+
+        function coinKazan() {
+            coinCount += 1; // Her tıklamada 1 coin kazanılacak
+            document.querySelector('.coin').textContent = "Coin: " + coinCount;
+
+            // Bu veriyi botla kaydedeceğiz, bot API'sine post edebiliriz.
+            // Örneğin, botun API endpointi burada kullanılabilir.
+            // Example: sendCoinDataToBot(coinCount);
+        }
+
+        // Burada, bot API'si ile bağlantı yapılabilir (örneğin AJAX veya fetch kullanarak).
+    </script>
+</body>
+</html>
